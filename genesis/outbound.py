@@ -153,7 +153,7 @@ class Session(Protocol):
         digit_timeout: Optional[int] = None,
         transfer_on_failure: Optional[str] = None,
     ) -> Awaitable[ESLEvent]:
-        formatter = lambda value: "" if value is None else value
+        formatter = lambda value: "" if value is None else str(value)
         ordered_arguments = [
             minimal,
             maximum,
